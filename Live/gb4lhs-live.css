@@ -1,0 +1,26 @@
+body {
+    background-color: #222;
+    background-image: linear-gradient(to right, #222 , #333, #333, #222);
+    color: #ddd;
+}
+
+.logbox {
+    margin-top: 1em;
+}
+
+.statheader {
+    margin-right: 0.5em;
+}
+
+.statheader, .statresult {
+    font-size: 16pt;
+}
+
+.status {
+    font-size: 24pt;
+}
+
+.liveinfoheader {
+    font-weight: bold;
+    margin-right: 0.5em;
+}
