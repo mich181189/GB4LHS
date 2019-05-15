@@ -1,0 +1,21 @@
+
+.logbox {
+    margin-top: 1em;
+}
+
+.statheader {
+    margin-right: 0.5em;
+}
+
+.statheader, .statresult {
+    font-size: 16pt;
+}
+
+.status {
+    font-size: 24pt;
+}
+
+.liveinfoheader {
+    font-weight: bold;
+    margin-right: 0.5em;
+}

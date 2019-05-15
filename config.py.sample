@@ -1,0 +1,11 @@
+from datetime import datetime
+from datetime import timezone
+from datetime import timedelta
+
+COUNTDOWN_END=datetime(2019,5,26,10,0,0, tzinfo=timezone(timedelta(hours=1)))
+
+DATABASE_SERVER="localhost"
+DATABASE_USER=""
+DATABASE_PASSWORD=""
+DATABASE=""
+

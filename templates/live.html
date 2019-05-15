@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GB4LHS - Live Status</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/gb4lhs.css">
+    <link rel="stylesheet" href="static/gb4lhs-live.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">GB4LHS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--<div class="alert alert-warning" role="alert">
+        Come Back Soon!
+    </div>-->
+    <div class="container">
+        <div class="row">
+            <div class="col-6 card text-white bg-dark">
+                <div class="card-header">Live Info</div>
+                <div class="card-body">
+                    {% if onair %}
+                    {% for k,v in status.items() %}
+                    <span class="liveinfoheader">{{ k }}</span><span class="liveinfodata">{{ v }}</span><br>
+                    {% endfor %}
+                    {% else %}
+                    <span class="liveinfoheader">Currently Not Operating</span>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col card text-white bg-dark">
+                <div class="card-header">Current Status</div>
+                <div class="card-body">
+                    {% if onair %}
+                    <span class="status badge badge-pill badge-success">ON AIR</span>
+                    {% else %}
+                    <span class="status badge badge-pill btn-secondary">OFF AIR</span>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col card text-white bg-dark">
+                <div class="card-header">Statistics</div>
+                <div class="card-body">
+                    <span class="statheader badge badge-secondary">Contacts:</span><span class="statresult">{{ contact_count}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col logbox">
+                <h1>Live Log</h1>
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Callsign</th>
+                            <th>Frequency</th>
+                            <th>Mode</th>
+                            <th>Received Report</th>
+                            <th>Sent Report</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for contact in contacts %}
+                        <tr>
+                            <th>{{ contact['datetime'].date() }}</th>
+                            <th>{{ contact['datetime'].time() }}</th>
+                            <th>{{ contact['callsign'] }}</th>
+                            <th>{{ contact['frequency'] }}</th>
+                            <th>{{ contact['mode'] }}</th>
+                            <th>{{ contact['report_recv'] }}</th>
+                            <th>{{ contact['report_sent'] }}</th>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="static/gb4lhs-live.js"></script>
+</body>
+</html>

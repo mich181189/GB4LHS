@@ -1,0 +1,5 @@
+body {
+    background-color: #222;
+    background-image: linear-gradient(to right, #222 , #333, #333, #222);
+    color: #ddd;
+}

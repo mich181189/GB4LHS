@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GB4LHS - Coming Soon</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/gb4lhs.css">
+    <link rel="stylesheet" href="static/gb4lhs-holding.css">
+</head>
+<body>
+    <h1 id="maintitle">GB4LHS - London Hackspace Open Day Special Event Station</h1>
+    <h2 id="subtitle">26th May 2019</h2>
+    <div id="mainbody">
+        <p>
+            After many months of work, <a href="https://london.hackspace.org.uk/">London Hackspace</a> is finally rebuilt after moving to its new space in Wembley, North London. In order to celebrate this, and show the space off to potential new members, an open day is being held on Sunday the 26th May 2019. As part of this, the radio subgroup will be active throughout the day as GB4LHS.
+        </p>
+        <p>
+            Come back to this site on the day for live status updates!
+        </p>
+    </div>
+    <div id="countdown"></div>
+    <div class="container">
+        <div class="row">
+            <div class="card text-white bg-dark col-sm">
+                <div class="card-header">Station Address</div>
+              <div class="card-body">
+                <h5 class="card-title">London Hackspace</h5>
+                <p class="card-text">388 High Road<br>
+                    Wembley<br>
+                    London<br>
+                    HA9 6AR
+                </p>
+              </div>
+            </div>
+            <div class="card text-white bg-dark col-sm">
+                <div class="card-header">Event Details</div>
+              <div class="card-body">
+                <h5 class="card-title">London Hackspace Open Day</h5>
+                <p class="card-text">Date: 26th May 2019<br>
+                    Time: TBC
+                </p>
+              </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var end = new Date('{{ config['COUNTDOWN_END'].isoformat() }}');
+    </script>
+    <script type="text/javascript" src="static/gb4lhs-holding.js"></script>
+</body>
+</html>

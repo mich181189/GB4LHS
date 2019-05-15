@@ -1,0 +1,21 @@
+#maintitle {
+    text-align: center
+}
+
+#subtitle {
+    text-align: center
+}
+
+#countdown {
+    text-align: center;
+    font-size: 32pt;
+}
+
+body {
+    margin: 4em;
+}
+
+#mainbody {
+    margin-left: 4em;
+    margin-right: 4em;
+}
