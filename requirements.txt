@@ -1,1 +1,2 @@
 Flask~=1.0
+mysqlclient~=1.4

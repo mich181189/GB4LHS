@@ -32,7 +32,7 @@
         <div class="row">
             <div class="col-md-6 card text-white bg-dark">
                 <div class="card-header">Live Info</div>
-                <div class="card-body">
+                <div class="card-body" id="livestatusbox">
                     {% if onair %}
                     {% for k,v in status.items() %}
                     <span class="liveinfoheader">{{ k }}</span><span class="liveinfodata">{{ v }}</span><br>
@@ -44,7 +44,7 @@
             </div>
             <div class="col-md card text-white bg-dark">
                 <div class="card-header">Current Status</div>
-                <div class="card-body">
+                <div class="card-body" id="onairindicator">
                     {% if onair %}
                     <span class="status badge badge-pill badge-success">ON AIR</span>
                     {% else %}
@@ -55,7 +55,7 @@
             <div class="col-md card text-white bg-dark">
                 <div class="card-header">Statistics</div>
                 <div class="card-body">
-                    <span class="statheader badge badge-secondary">Contacts:</span><span class="statresult">{{ contact_count}}</span>
+                    <span class="statheader badge badge-secondary">Contacts:</span><span class="statresult" id="qsosbox">{{ contact_count}}</span>
                 </div>
             </div>
         </div>
@@ -74,16 +74,16 @@
                             <th>Sent Report</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="contactslist">
                         {% for contact in contacts %}
                         <tr>
-                            <th>{{ contact['datetime'].date() }}</th>
-                            <th>{{ contact['datetime'].time() }}</th>
-                            <th>{{ contact['callsign'] }}</th>
-                            <th>{{ contact['frequency'] }}</th>
-                            <th>{{ contact['mode'] }}</th>
-                            <th>{{ contact['report_recv'] }}</th>
-                            <th>{{ contact['report_sent'] }}</th>
+                            <td>{{ contact['datetime'].date() }}</td>
+                            <td>{{ contact['datetime'].time() }}</td>
+                            <td>{{ contact['callsign'] }}</td>
+                            <td>{{ contact['frequency'] }}</td>
+                            <td>{{ contact['mode'] }}</td>
+                            <td>{{ contact['report_recv'] }}</td>
+                            <td>{{ contact['report_sent'] }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -91,7 +91,9 @@
             </div>
         </div>
     </div>
-
+    <script type="text/javascript">
+        var last_qso_timestamp = "{{ last_qso_timestamp }}";
+    </script>
     <script type="text/javascript" src="static/gb4lhs-live.js"></script>
 </body>
 </html>
