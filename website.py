@@ -26,7 +26,8 @@ def get_on_air():
     data = db.get_cat()
     if data['timestamp'] == 0:
         return False
-    return (now().timestamp() - data['timestamp'].timestamp()) < 120
+    now = datetime.utcnow().replace(tzinfo=timezone.utc)
+    return (now.timestamp() - data['timestamp'].timestamp()) < 120
 
 def get_holding_cache_time():
     now = datetime.utcnow().replace(tzinfo=timezone.utc)
