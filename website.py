@@ -81,7 +81,7 @@ def getqsossince(timestamp):
         })
 
 @app.route("/live")
-@cache(60)
+@cache(3600)
 def live():
     latest = db.get_last_10_qsos()
     last_qso_timestamp = 0
