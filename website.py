@@ -80,6 +80,10 @@ def getqsossince(timestamp):
         "refresh-in": 10000
         })
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
 @app.route("/live")
 @cache(600)
 def live():
@@ -96,5 +100,7 @@ def live():
 
 @app.route("/")
 def hello():
-    #return live()
+    now = datetime.utcnow().replace(tzinfo=timezone.utc)
+    if (app.config['COUNTDOWN_END'].timestamp() - now.timestamp()) < 3600:
+        return live()
     return holding()
